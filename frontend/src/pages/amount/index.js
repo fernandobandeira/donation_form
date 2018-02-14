@@ -84,7 +84,7 @@ class AmountPage extends Component {
             )}
           </form>
         </div>
-        <ModalFooterComponent link='/donor'/>
+        <ModalFooterComponent link='/information'/>
       </div>
     )
   }
