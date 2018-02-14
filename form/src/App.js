@@ -1,18 +1,30 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
+import { Route } from 'react-router-dom';
+
+import AmountPage from './pages/amount'
 
 class App extends Component {
+  componentDidMount() {
+    window
+      .$('#donationWidget')
+      .modal()
+  }
+
   render() {
     return (
-      <div className="container MyComponent">
-        <div className="jumbotron">
-          <h1>Hello there!</h1>
-          <button type="button" className="btn btn-primary">
-            Bootstrap Button!
-          </button>
+      <div
+        aria-hidden="true"
+        aria-labelledby="donationWidget"
+        className="modal fade"
+        id="donationWidget"
+        role="dialog"
+        tabIndex="-1">
+        <div className="modal-dialog" role="document">
+          <Route exact path="/" component={AmountPage} />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

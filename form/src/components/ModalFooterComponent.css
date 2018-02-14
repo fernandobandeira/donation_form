@@ -1,0 +1,15 @@
+.modal-footer .btn-primary {
+    background-color: #ce3e39;
+    border-color: #ce3e39;
+    color: white;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 200px;
+    font-size: 22px;
+}
+
+.modal-footer .btn-primary.active, .modal-footer .btn-primary:active {
+    background-color: #ced4da !important;
+    border-color: #ced4da !important;
+    color: black !important;
+}
