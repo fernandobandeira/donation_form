@@ -105,6 +105,10 @@ class InformationPage extends Component {
         ...this.props.form,
       })
     }
+
+    if (!this.props.form.chooseAmount) {
+      this.props.history.push(`/`)
+    }
   }
 
   render() {

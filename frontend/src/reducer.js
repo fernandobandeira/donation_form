@@ -13,7 +13,8 @@ export default function (state = INITIAL_STATE, action) {
         amount: action.payload.amount,   
         frequency: action.payload.frequency,   
         honor_name: action.payload.honor_name,   
-        honor_comment: action.payload.honor_comment,   
+        honor_comment: action.payload.honor_comment,
+        chooseAmount: true,
       }
     case SET_INFORMATION:      
       return {
@@ -23,7 +24,8 @@ export default function (state = INITIAL_STATE, action) {
         last_name: action.payload.last_name,   
         email: action.payload.email,   
         phone: action.payload.phone,            
-        receive_updates: action.payload.receive_updates,   
+        receive_updates: action.payload.receive_updates,
+        setInformation: true,
       }
     case SET_PAYMENT:      
       return {
@@ -31,6 +33,7 @@ export default function (state = INITIAL_STATE, action) {
         card_number: action.payload.card_number,   
         cvv: action.payload.cvv,   
         expiration: action.payload.expiration,   
+        setPayment: true,
       }
     default:
       return state

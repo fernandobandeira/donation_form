@@ -89,6 +89,10 @@ class PaymentPage extends Component {
         ...this.props.form,
       })
     }
+
+    if (!this.props.form.setInformation) {
+      this.props.history.push(`/information`)
+    }
   }
 
   render() {
