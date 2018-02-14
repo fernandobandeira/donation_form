@@ -10,7 +10,10 @@ class App extends Component {
   componentDidMount() {
     window
       .$('#donationWidget')
-      .modal()
+      .modal({
+        backdrop: 'static',
+        keyboard: false,
+      })
   }
 
   render() {
@@ -19,7 +22,7 @@ class App extends Component {
         aria-hidden="true"
         aria-labelledby="donationWidget"
         className="modal fade"
-        id="donationWidget"
+        id="donationWidget"        
         role="dialog"
         tabIndex="-1">
         <div className="modal-dialog" role="document">

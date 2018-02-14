@@ -1,13 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import './ModalFooterComponent.css'
 
-const ModalFooterComponent = function ({ link }) {
+const ModalFooterComponent = function ({ next }) {
   return (
     <div className="modal-footer justify-content-center">
-      <Link to={link}>
-        <button className="btn btn-primary next" type="button">Next</button>
-      </Link>
+      <button className="btn btn-primary next" type="button" onClick={next}>Next</button>
     </div>
   )
 }

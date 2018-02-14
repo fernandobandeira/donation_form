@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 
 import ModalHeaderComponent from '../../components/ModalHeaderComponent'
-import ModalFooterComponent from '../../components/ModalFooterComponent'
 
 class ThanksPage extends Component {
   render() {
