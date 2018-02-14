@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import ModalHeaderComponent from '../../components/ModalHeaderComponent'
 import ModalFooterComponent from '../../components/ModalFooterComponent'
 
-class DonorPage extends Component {
+class InformationPage extends Component {
   state = {
     anonymous: false,
   }
@@ -58,4 +58,4 @@ class DonorPage extends Component {
   }
 }
 
-export default DonorPage
+export default InformationPage
