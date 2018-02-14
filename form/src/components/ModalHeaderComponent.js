@@ -1,7 +1,7 @@
 import React from 'react'
 import './ModalHeaderComponent.css'
 
-const ModalHeaderComponent = function () {
+const ModalHeaderComponent = function ({ title, step=0 }) {
   return (
     <div className="modal-header">
       <button
@@ -10,16 +10,16 @@ const ModalHeaderComponent = function () {
         type="button">
         <img src="./img/svg/arrow_left.svg" alt="back"/>
       </button>
-      <p className="heading lead" style={{
-        textAlign: 'left'
-      }}>
-        Choose Amount
+      <p className="heading lead">
+        { title }
       </p>
-      <div className="heading-circles">
-        <div className="circle filled"></div>
-        <div className="circle"></div>
-        <div className="circle"></div>
-      </div>
+      {step !== 0 && (
+        <div className="heading-circles">
+          <div className={step === 1 ? 'circle filled' : 'circle'}></div>
+          <div className={step === 2 ? 'circle filled' : 'circle'}></div>
+          <div className={step === 3 ? 'circle filled' : 'circle'}></div>
+        </div>
+      )}
       <button
         aria-label="forward"
         className="btn btn-outline-primary nextstep"

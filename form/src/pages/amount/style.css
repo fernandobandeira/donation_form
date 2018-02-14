@@ -24,3 +24,24 @@
     display: inline-block;    
     width: 139px;
 }
+
+.frequency {
+    margin-bottom: 1rem;
+}
+
+.frequency .btn-primary {
+    background-color: transparent;
+    border-color: #ced4da;
+    color: black;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.frequency .btn-primary.active, .frequency .btn-primary:active {
+    background-color: #ce3e39 !important;
+    border-color: #ce3e39 !important;
+}
+
+.frequency input {
+    display: none;
+}
