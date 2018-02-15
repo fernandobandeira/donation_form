@@ -1,6 +1,6 @@
 import {
   CHOOSE_AMOUNT, SET_INFORMATION, SET_PAYMENT
-} from './actions'
+} from '../actions'
 
 const INITIAL_STATE = {}
 
@@ -27,6 +27,9 @@ export default function (state = INITIAL_STATE, action) {
         receive_updates: action.payload.receive_updates,
         setInformation: true,
       }
+    case SET_PAYMENT: {
+      return INITIAL_STATE
+    }
     default:
       return state
   }

@@ -50,7 +50,7 @@ class AmountPage extends Component {
 
   submit = () => {
     this.props.chooseAmount(this.state)
-    this.props.history.push(`/information`)
+    this.props.history.push(`/modal/information`)
   }
 
   componentWillMount() {
@@ -162,7 +162,7 @@ class AmountPage extends Component {
   }
 }
 
-const mapStateToProps = (form, ownProps) => ({
+const mapStateToProps = ({form}, ownProps) => ({
   form,
 })
 

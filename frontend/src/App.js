@@ -5,32 +5,27 @@ import AmountPage from './pages/amount'
 import InformationPage from './pages/information'
 import PaymentPage from './pages/payment'
 import ThanksPage from './pages/thanks'
+import ListDonationsPage from './pages/list-donations'
 
 class App extends Component {
-  componentDidMount() {
-    window
-      .$('#donationWidget')
-      .modal({
-        backdrop: 'static',
-        keyboard: false,
-      })
-  }
-
   render() {
     return (
-      <div
-        aria-hidden="true"
-        aria-labelledby="donationWidget"
-        className="modal fade"
-        id="donationWidget"        
-        role="dialog"
-        tabIndex="-1">
-        <div className="modal-dialog" role="document">
-          <Route exact path="/" component={AmountPage} />
-          <Route exact path="/information" component={InformationPage} />
-          <Route exact path="/payment" component={PaymentPage} />
-          <Route exact path="/thanks" component={ThanksPage} />
-        </div>
+      <div>
+        <Route path="/" component={ListDonationsPage} />
+        <div
+          aria-hidden="true"
+          aria-labelledby="donationWidget"
+          className="modal"
+          id="donationWidget"        
+          role="dialog"
+          tabIndex="-1">
+          <div className="modal-dialog" role="document">
+            <Route exact path="/modal/" component={AmountPage} />
+            <Route exact path="/modal/information" component={InformationPage} />
+            <Route exact path="/modal/payment" component={PaymentPage} />
+            <Route exact path="/modal/thanks" component={ThanksPage} />
+          </div>
+        </div>        
       </div>
     )
   }

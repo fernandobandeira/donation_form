@@ -6,7 +6,7 @@ import { createStore, compose, applyMiddleware } from 'redux'
 import axios from 'axios'
 import thunk from 'redux-thunk'
 
-import reducer from './reducer'
+import reducer from './reducers'
 import './include/bootstrap'
 import './style.css'
 import App from './App'

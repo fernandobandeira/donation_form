@@ -1,29 +1,29 @@
-import React, {Component} from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react'
 
 import ModalHeaderComponent from '../../components/ModalHeaderComponent'
+import ModalFooterComponent from '../../components/ModalFooterComponent'
 
 class ThanksPage extends Component {
-  componentWillMount() {
-    if (!this.props.form.setInformation) {
-      this.props.history.push(`/information`)
-    }
+  close = () => {
+    this.props.history.push(`/`)
   }
 
   render() {
+    const { close } = this
+
     return (
       <div className="modal-content">
         <ModalHeaderComponent title='Success' />
         <div className="modal-body">
           Thanks for your donation!
-        </div>        
+        </div>      
+        <ModalFooterComponent 
+          next={close}
+          close={true}
+          text={'List donations'}/>  
       </div>
     )
   }
 }
 
-const mapStateToProps = (form, ownProps) => ({
-  form,
-})
-
-export default connect(mapStateToProps)(ThanksPage)
+export default ThanksPage

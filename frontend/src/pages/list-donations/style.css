@@ -1,0 +1,15 @@
+.list-donation .btn-primary {
+    background-color: #ce3e39;
+    border-color: #ce3e39;
+    color: white;
+    font-weight: bold;
+    margin: 20px 0;
+    min-width: 50px;
+    font-size: 16px;
+}
+
+.list-donation .btn-primary.active, .list-donation .btn-primary:active {
+    background-color: #ced4da !important;
+    border-color: #ced4da !important;
+    color: black !important;
+}

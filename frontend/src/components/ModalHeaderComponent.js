@@ -18,7 +18,7 @@ class ModalHeaderComponent extends Component {
             aria-label="back"
             className={this.checkDisabled(previous)}
             type="button">
-            <img src="./img/svg/arrow_left.svg" alt="back"/>
+            <img src="/img/svg/arrow_left.svg" alt="back"/>
           </button>
         </Link>
         <p className="heading lead">
@@ -36,7 +36,7 @@ class ModalHeaderComponent extends Component {
           className={this.checkDisabled(next)}
           onClick={next}         
           type="button">
-          <img src="./img/svg/arrow_right.svg" alt="forward"/>
+          <img src="/img/svg/arrow_right.svg" alt="forward"/>
         </button>        
       </div>
     )

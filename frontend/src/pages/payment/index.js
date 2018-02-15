@@ -79,7 +79,7 @@ class PaymentPage extends Component {
     
     if (!errors) {
       this.props.setPayment(this.state)
-      this.props.history.push(`/thanks`)
+      this.props.history.push(`/modal/thanks`)
     }
   }
 
@@ -91,7 +91,7 @@ class PaymentPage extends Component {
     }
 
     if (!this.props.form.setInformation) {
-      this.props.history.push(`/information`)
+      this.props.history.push(`/modal/information`)
     }
   }
 
@@ -105,7 +105,7 @@ class PaymentPage extends Component {
 
     return (
       <div className="modal-content">
-        <ModalHeaderComponent title='Payment' step={3} previous='/information' next={submit} />
+        <ModalHeaderComponent title='Payment' step={3} previous='/modal/information' next={submit} />
         <div className="modal-body">
           <form>
             <div className='form-group'>
@@ -157,7 +157,7 @@ class PaymentPage extends Component {
   }
 }
 
-const mapStateToProps = (form, ownProps) => ({
+const mapStateToProps = ({form}, ownProps) => ({
   form,
 })
 
