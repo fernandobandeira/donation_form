@@ -1,0 +1,104 @@
+#%RAML 1.0
+title: donors
+version: v1
+baseUri: /
+
+types: 
+  Donor:
+    properties: 
+      amount:
+        required: true
+        type: number
+      frequency:
+        required: true
+        type: string
+      honor_name:
+        type: string
+      honor_comment:
+        type: string
+      first_name:
+        type: string
+        required: true
+      last_name:
+        type: string
+        required: true
+      email:
+        type: string
+        required: true
+      phone:
+        type: string
+      card_number:
+        type: string
+        required: true
+      cvv:
+        type: string
+        required: true
+      expiration:
+        type: string
+        required: true
+      receive_updates:
+        type: boolean
+      anonymous:
+        type: boolean
+      honor:
+        type: boolean
+    example:
+      amount: 1000
+      frequency: monthly
+      honor_name: Test
+      honor_comment: Test Comment
+      first_name: Fernando
+      last_name: Bandeira
+      email: fernando@test.com
+      phone: (123) 123-1234
+      card_number: 1234 1234 1234 1234
+      cvv: 123
+      expiration: 12/19
+      receive_updates: false
+      anonymous: false
+      honor: false
+
+/donors:
+  /:
+    get:
+      description: Get a list of donors
+      responses:
+        200:
+          body:
+            application/json:              
+              example: !include donors.sample
+    post:
+      description: Create a new donor
+      body: 
+        application/json:
+          type: Donor     
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include donor.sample
+  /{id}:
+    get:
+      description: Get a single donor
+      responses:
+        200:
+          body:
+            application/json:              
+              example: !include donor.sample
+    patch:
+      description: Update a donor
+      body: 
+        application/json:          
+          type: Donor   
+      responses:
+        200:
+          body:
+            application/json:              
+              example: !include donor.sample
+    delete:
+      description: Delete a donor
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include donor.sample
