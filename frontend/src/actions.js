@@ -15,5 +15,5 @@ export const setInformation = form => ({
 })
 
 export const setPayment = form => dispatch => {    
-    axios.post(`/`, form);
+    axios.post('', form);
 }
