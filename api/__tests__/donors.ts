@@ -48,7 +48,7 @@ beforeEach(() => model.remove({}).then(() => model.create(seed)));
 
 describe('GET /', () => {
   test('It should list all donors', () => {
-    return request(app).get('/').then((response) => {
+    return request(app).get('/api/').then((response) => {
       expect(response.status).toBe(200);
       expect(response.body.donors).toMatchObject(seed);
     });
@@ -59,20 +59,20 @@ describe('GET /:id', () => {
   test('It should return a single donor', () => {
     const [donor] = seed;
 
-    return request(app).get(`/${donor._id}`).then((response) => {
+    return request(app).get(`/api/${donor._id}`).then((response) => {
       expect(response.status).toBe(200);
       expect(response.body.donor).toMatchObject(donor);
     });
   });
 
   test('It should return a 404', () => {
-    return request(app).get(`/${new ObjectId().toHexString()}`).then((response) => {
+    return request(app).get(`/api/${new ObjectId().toHexString()}`).then((response) => {
       expect(response.status).toBe(404);
     });
   });
 
   test('It should return a 400', () => {
-    return request(app).get(`/123456`).then((response) => {
+    return request(app).get(`/api/123456`).then((response) => {
       expect(response.status).toBe(400);
     });
   });
@@ -98,7 +98,7 @@ describe('POST /', () => {
       expiration: '12/20',
     };
 
-    return request(app).post('/').send(donor).then((response) => {
+    return request(app).post('/api/').send(donor).then((response) => {
       expect(response.status).toBe(200);
       expect(response.body.donor).toMatchObject(donor);
     });
@@ -118,7 +118,7 @@ describe('POST /', () => {
       expiration: '12/20',
     };
 
-    return request(app).post('/').send(donor).then((response) => {
+    return request(app).post('/api/').send(donor).then((response) => {
       expect(response.status).toBe(400);
     });
   });
@@ -131,7 +131,7 @@ describe('PATCH /:id', () => {
       first_name: 'test',
     };
 
-    return request(app).patch(`/${donor._id}`).send(donor).then((response) => {
+    return request(app).patch(`/api/${donor._id}`).send(donor).then((response) => {
       expect(response.status).toBe(200);
       expect(response.body.donor).toMatchObject(donor);
     });
@@ -143,7 +143,7 @@ describe('PATCH /:id', () => {
       _version: -2,
     };
 
-    return request(app).patch(`/${donor._id}`).send(donor).then((response) => {
+    return request(app).patch(`/api/${donor._id}`).send(donor).then((response) => {
       expect(response.status).toBe(409);
     });
   });
@@ -155,7 +155,7 @@ describe('PATCH /:id', () => {
   });
 
   test('It should return a 400', () => {
-    return request(app).patch(`/123456`).then((response) => {
+    return request(app).patch(`/api/123456`).then((response) => {
       expect(response.status).toBe(400);
     });
   });
@@ -165,20 +165,20 @@ describe('DELETE /:id', () => {
   test('It should delete the donor', () => {
     const [donor] = seed;
 
-    return request(app).delete(`/${donor._id}`).then((response) => {
+    return request(app).delete(`/api/${donor._id}`).then((response) => {
       expect(response.status).toBe(200);
       expect(response.body.donor).toMatchObject(donor);
     });
   });
 
   test('It should return a 404', () => {
-    return request(app).delete(`/${new ObjectId().toHexString()}`).then((response) => {
+    return request(app).delete(`/api/${new ObjectId().toHexString()}`).then((response) => {
       expect(response.status).toBe(404);
     });
   });
 
   test('It should return a 400', () => {
-    return request(app).delete(`/123456`).then((response) => {
+    return request(app).delete(`/api/123456`).then((response) => {
       expect(response.status).toBe(400);
     });
   });
