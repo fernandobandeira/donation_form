@@ -5,14 +5,8 @@ import ModalHeaderComponent from '../../components/ModalHeaderComponent'
 
 class ThanksPage extends Component {
   componentWillMount() {
-    if (this.props.form) {
-      this.setState({
-        ...this.props.form,
-      })
-    }
-
-    if (!this.props.form.setPayment) {
-      this.props.history.push(`/payment`)
+    if (!this.props.form.setInformation) {
+      this.props.history.push(`/information`)
     }
   }
 

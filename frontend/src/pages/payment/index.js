@@ -149,7 +149,9 @@ class PaymentPage extends Component {
             </div>
           </form>
         </div>
-        <ModalFooterComponent next={submit}/>
+        <ModalFooterComponent 
+          next={submit} 
+          text={'Donate $'+this.props.form.amount+' '+this.props.form.frequency}/>
       </div>
     )
   }

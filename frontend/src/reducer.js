@@ -27,14 +27,6 @@ export default function (state = INITIAL_STATE, action) {
         receive_updates: action.payload.receive_updates,
         setInformation: true,
       }
-    case SET_PAYMENT:      
-      return {
-        ...state,
-        card_number: action.payload.card_number,   
-        cvv: action.payload.cvv,   
-        expiration: action.payload.expiration,   
-        setPayment: true,
-      }
     default:
       return state
   }

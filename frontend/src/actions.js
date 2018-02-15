@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const CHOOSE_AMOUNT = 'CHOOSE_AMOUNT'
 export const SET_INFORMATION = 'SET_INFORMATION'
 export const SET_PAYMENT = 'SET_PAYMENT'
@@ -12,7 +14,6 @@ export const setInformation = form => ({
     payload: form,
 })
 
-export const setPayment = form => ({
-    type: SET_PAYMENT,
-    payload: form,
-})
+export const setPayment = form => dispatch => {    
+    axios.post(`/`, form);
+}

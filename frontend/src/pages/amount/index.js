@@ -11,7 +11,7 @@ class AmountPage extends Component {
   state = {
     honor: false,
     amount: '1000',
-    frequency: 'quarterly',
+    frequency: 'Quarterly',
     honor_name: '',
     honor_comment: '',    
   }
@@ -100,20 +100,20 @@ class AmountPage extends Component {
               <span className='md-space'>Donation Frequency</span>
             </div>
             <div className='btn-group'>
-              <label className={isActive(this.state.frequency, 'quarterly')}>
-                <input type='radio' name='frequency' value='quarterly' onChange={onInputChange} />
+              <label className={isActive(this.state.frequency, 'Quarterly')}>
+                <input type='radio' name='frequency' value='Quarterly' onChange={onInputChange} />
                 Quarterly
               </label>
-              <label className={isActive(this.state.frequency, 'monthly')}>
-                <input type='radio' name='frequency' value='monthly' onChange={onInputChange}/>
+              <label className={isActive(this.state.frequency, 'Monthly')}>
+                <input type='radio' name='frequency' value='Monthly' onChange={onInputChange}/>
                 Monthly
               </label>
-              <label className={isActive(this.state.frequency, 'weekly')}>
-                <input type='radio' name='frequency' value='weekly' onChange={onInputChange}/>
+              <label className={isActive(this.state.frequency, 'Weekly')}>
+                <input type='radio' name='frequency' value='Weekly' onChange={onInputChange}/>
                 Weekly
               </label>
-              <label className={isActive(this.state.frequency, 'one_time')}>
-                <input type='radio' name='frequency' value='one_time' onChange={onInputChange}/>
+              <label className={isActive(this.state.frequency, 'One Time')}>
+                <input type='radio' name='frequency' value='One Time' onChange={onInputChange}/>
                 One Time
               </label>
             </div>

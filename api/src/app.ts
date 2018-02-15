@@ -2,6 +2,7 @@ import * as q from 'q';
 import * as logger from 'morgan';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 import mongoose = require('mongoose');
 import schema from './schema';
 import routes from './routes';
@@ -26,6 +27,7 @@ export class App {
     this.model = connection.model('Donor', schema);
   
     this.app = express();
+    this.app.use(cors());
     this.app.use(bodyParser.json());
     this.app.use(logger('dev'));
   }

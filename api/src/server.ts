@@ -1,7 +1,7 @@
 import { App } from './app';
 
 const {
-  PORT = 3000,
+  PORT = 3001,
   MONGODB_URI = 'mongodb://localhost:27017/Donors',
 } = process.env;
 
