@@ -1,16 +1,34 @@
 import { pick } from 'lodash';
 import * as express from 'express';
 import { Model } from 'mongoose';
+import * as mcache from 'memory-cache';
+
+const cache = (duration) => {
+  return (req, res, next) => {
+    const key = '__express__' + req.originalUrl || req.url;
+    const cachedBody = mcache.get(key);
+    if (cachedBody) {
+      res.send(cachedBody);
+      return;
+    } 
+    res.sendResponse = res.send;
+    res.send = (body) => {
+      mcache.put(key, body, duration * 1000);
+      res.sendResponse(body);
+    };
+    next();
+  };
+};
 
 export default (
   { app, model } : { app: express.Application, model: Model<any> },
 ) => {
-  app.get('/', (req, res) => {
+  app.get('/', cache(10), (req, res) => {
     model.find()
       .then(donors => res.send({ donors }));
   });
 
-  app.get('/:id', (req, res) => {
+  app.get('/:id', cache(10), (req, res) => {
     model.findById(req.params.id)
       .then((donor) => {
         if (!donor) {

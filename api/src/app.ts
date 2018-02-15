@@ -2,10 +2,13 @@ import * as q from 'q';
 import * as logger from 'morgan';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import * as batch_request from 'batch-request';
 import * as cors from 'cors';
 import mongoose = require('mongoose');
 import schema from './schema';
 import routes from './routes';
+
+const batch = batch_request();
 
 export class App {
   public app: express.Application;
@@ -29,6 +32,7 @@ export class App {
     this.app = express();
     this.app.use(cors());
     this.app.use(bodyParser.json());
-    this.app.use(logger('dev'));
+    this.app.use(logger('tiny'));
+    this.app.post('/batch', batch);
   }
 }

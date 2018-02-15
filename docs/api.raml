@@ -57,6 +57,20 @@ types:
       receive_updates: false
       anonymous: false
       honor: false
+  Request:
+    properties: 
+      method:
+        required: true
+        type: string
+      url:
+        required: true
+        type: string
+    example:
+      requestName: 
+        {
+          method: GET,
+          url: http://localhost:3001/5a84eacb924167310c3037d9
+        }
 
 /api:
   /:
@@ -102,3 +116,15 @@ types:
           body:
             application/json:
               example: !include donor.sample
+  /batch:
+    post:
+      description: Batch requests
+      body:
+        application/json:
+          type: Request
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include request.sample
+            
