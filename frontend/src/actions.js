@@ -17,7 +17,7 @@ export const setInformation = form => ({
 })
 
 export const setPayment = form => dispatch => {    
-    axios.post('', form)
+    axios.post('/', form)
         .then(response => dispatch({
             type: ADD_DONOR,
             payload: response.data.donor,
@@ -28,7 +28,7 @@ export const setPayment = form => dispatch => {
 }
 
 export const getDonors = () => dispatch => {    
-    axios.get('')
+    axios.get('/')
         .then(response => dispatch({
             type: GET_DONORS,
             payload: response.data.donors,

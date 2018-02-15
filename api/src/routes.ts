@@ -23,12 +23,12 @@ const cache = (duration) => {
 export default (
   { app, model } : { app: express.Application, model: Model<any> },
 ) => {
-  app.get('api/', cache(10), (req, res) => {
+  app.get('/api/', cache(10), (req, res) => {
     model.find()
       .then(donors => res.send({ donors }));
   });
 
-  app.get('api/:id', cache(10), (req, res) => {
+  app.get('/api/:id', cache(10), (req, res) => {
     model.findById(req.params.id)
       .then((donor) => {
         if (!donor) {
@@ -40,7 +40,7 @@ export default (
       .catch(e => res.status(400).send({}));
   });
 
-  app.post('api/', (req, res) => {
+  app.post('/api/', (req, res) => {
     new model(pick(req.body, [
       '_id',
       'honor',
@@ -63,7 +63,7 @@ export default (
       .catch(e => res.status(400).send({}));
   });
 
-  app.patch('api/:id', (req, res) => {
+  app.patch('/api/:id', (req, res) => {
     model.findById(req.params.id)
       .then((donor) => {
         if (!donor) {
@@ -98,7 +98,7 @@ export default (
       .catch(e => res.status(400).send({}));
   });
 
-  app.delete('api/:id', (req, res) => {
+  app.delete('/api/:id', (req, res) => {
     model.findById(req.params.id)
       .then((donor) => {
         if (!donor) {

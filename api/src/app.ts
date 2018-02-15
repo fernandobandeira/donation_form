@@ -33,6 +33,6 @@ export class App {
     this.app.use(cors());
     this.app.use(bodyParser.json());
     this.app.use(logger('tiny'));
-    this.app.post('api/batch', batch);
+    this.app.post('/api/batch', batch);
   }
 }
