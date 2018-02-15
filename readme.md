@@ -33,6 +33,12 @@ pm2 start build/server.js
 
 React + Redux + Bootstrap 4
 
+Default port: ``` 3000 ```
+
+Default Api URL: ``` http://35.231.121.25/api ```
+
+Api URL can be changed on index.js
+
 #### Installation
 
 ```
@@ -41,7 +47,7 @@ npm install
 npm start
 ```
 
-### Deploy
+#### Deploy
 
 ```
 npm run build
