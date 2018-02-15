@@ -11,7 +11,7 @@ import './include/bootstrap'
 import './style.css'
 import App from './App'
 
-axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = 'http://35.231.121.25/api'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
