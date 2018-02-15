@@ -7,7 +7,7 @@ const seed = [
   {
     _id: new ObjectId().toHexString(),
     honor: false,
-    amount: '1000',
+    amount: 1000,
     frequency: 'monthly',
     honor_name: '',
     honor_comment: '',
@@ -24,7 +24,7 @@ const seed = [
   {
     _id: new ObjectId().toHexString(),
     honor: true,
-    amount: '5000',
+    amount: 5000,
     frequency: 'one_time',
     honor_name: 'Test Honor',
     honor_comment: 'Test Comment',
@@ -83,7 +83,7 @@ describe('POST /', () => {
     const donor = {
       _id: new ObjectId().toHexString(),
       honor: true,
-      amount: '500',
+      amount: 500,
       frequency: 'weekly',
       honor_name: 'Test Honor 2',
       honor_comment: 'Test Comment 2',
